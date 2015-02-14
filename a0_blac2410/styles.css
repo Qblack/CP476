@@ -1,0 +1,44 @@
+.cp414 {
+    background-color: #305dff
+}
+
+.cp373 {
+    background-color: #99CCCC
+}
+
+.cp476 {
+    background-color: #50cc75
+}
+.cp372 {
+    background-color: #0e9979
+}
+
+.bu481 {
+    background-color: #991624
+}
+
+.cp469 {
+    background-color: #990190
+}
+
+.banner{
+    padding-top: 2%;
+    background-image: url("space-wallpapers-7.jpg");
+    background-size: 100%;
+}
+
+.North{
+    padding-bottom: 2%;
+}
+.East{
+    padding-left: 3%;
+}
+.South{
+}
+.West{
+    padding-left: 3%;
+}
+.Center{
+
+}
+
