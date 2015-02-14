@@ -15,7 +15,15 @@
                 </div>
                 <p class="center">
                     My name is Quinton, I am a 5th year computer science and business student at Laurier.
-                    I like books, video games, CS and lego.
+                    I like books, video games, CS and lego.0
+                </p>
+                <p class="center">
+                    There have been <?php echo time();?> seconds since the Epoch.
+                    The current server time is
+                    <?php
+                        date_default_timezone_set('EST');
+                        echo date("h:i A e");
+                    ?>
                 </p>
             </div>
         </div>
