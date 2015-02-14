@@ -224,6 +224,19 @@
                     <a href="mydoc.html">Resume</a>
                     <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fhopper.wlu.ca%2F~blac2410%2Findex.html">Validator</a>
                 </p>
+                <p class="center">
+                    Page hits:
+                    <?php
+                        $file_name = ".\\count.txt";
+                        $fh = fopen($file_name,"r+");
+                        $last_count = fread($fh, filesize($file_name));
+                        $count = intval($last_count)+1;
+                        echo $count;
+                        fseek($fh,0);
+                        fwrite($fh,$count);
+                        fclose($fh);
+                    ?>
+                </p>
             </div>
         </div>
 
