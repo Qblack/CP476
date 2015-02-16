@@ -5,6 +5,12 @@
     <title>Quinton Black</title>
     <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.1/darkly/bootstrap.min.css" rel="stylesheet">
     <link href="static/css/styles.css" rel="stylesheet">
+    <?php
+        require_once("cgi-bin/IPstorage.php");
+        update_visitor((string)$_SERVER["REMOTE_ADDR"]);
+    ?>
+
+
 </head>
 <body>
     <div class="container-fluid">
@@ -218,13 +224,19 @@
 
         <div class="row South">
             <div class="col-md-10 col-md-offset-1">
-                <p class="center">
+                <div class="col-md-2 col-md-offset-3">
                     &copy; Quinton Black 2015
+                </div>
+                <div class="col-md-1">
                     <a href="mycourse.html">   My Courses   </a>
+                </div>
+                <div class="col-md-1">
                     <a href="mydoc.html">Resume</a>
+                </div>
+                <div class="col-md-1">
                     <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fhopper.wlu.ca%2F~blac2410%2Findex.html">Validator</a>
-                </p>
-                <p class="center">
+                </div>
+                <div class="col-md-1">
                     Page hits:
                     <?php
                         $file_name = ".\\count.txt";
@@ -236,7 +248,12 @@
                         fwrite($fh,$count);
                         fclose($fh);
                     ?>
-                </p>
+                </div>
+                <div class="col-md-1">
+                        <form class="form form-inline" action="visitors.php">
+                            <button class="btn btn-default" type="submit">Who has been here?</button>
+                        </form>
+                </div>
             </div>
         </div>
 
