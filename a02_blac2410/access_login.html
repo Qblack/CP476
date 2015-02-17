@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Visitors</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.1/darkly/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class ="col-md-4 col-md-offset-4">
+            <form class="form-horizontal" action="cgi-bin/mydocument.php" method="post">
+                <div class="form-group">
+                    <label for="email" class="control-label">Email</label>
+                    <input class="form-control" id="email" name="email" type="email" required="true">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="control-label">Password</label>
+                    <input class="form-control" id="password" name="password" type="password" required="true">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info pull-right">Login to view</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4" style="text-align: center;">
+            <hr>
+            <a href="portal.html">Portal</a>
+        </div>
+    </div>
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

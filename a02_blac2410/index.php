@@ -21,7 +21,7 @@
                 </div>
                 <p class="center">
                     My name is Quinton, I am a 5th year computer science and business student at Laurier.
-                    I like books, video games, CS and lego.0
+                    I like books, video games, CS and lego.
                 </p>
                 <p class="center">
                     There have been <?php echo time();?> seconds since the Epoch.
@@ -223,23 +223,21 @@
         </div>
 
         <div class="row South">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="col-md-2 col-md-offset-3">
+            <div class="col-md-10 col-md-offset-1" style="text-align: center">
+                <hr>
+                <div class="col-md-2 col-md-offset-1">
                     &copy; Quinton Black 2015
                 </div>
-                <div class="col-md-1">
-                    <a href="mycourse.html">   My Courses   </a>
-                </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <a href="mydoc.html">Resume</a>
                 </div>
-                <div class="col-md-1">
-                    <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fhopper.wlu.ca%2F~blac2410%2Findex.html">Validator</a>
+                <div class="col-md-2">
+                    <a href="portal.html">Portal</a>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     Page hits:
                     <?php
-                        $file_name = ".\\count.txt";
+                        $file_name = "count.txt";
                         $fh = fopen($file_name,"r+");
                         $last_count = fread($fh, filesize($file_name));
                         $count = intval($last_count)+1;
@@ -249,7 +247,7 @@
                         fclose($fh);
                     ?>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                         <form class="form form-inline" action="visitors.php">
                             <button class="btn btn-default" type="submit">Who has been here?</button>
                         </form>

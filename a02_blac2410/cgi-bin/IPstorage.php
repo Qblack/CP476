@@ -8,14 +8,11 @@
  */
 
 function update_visitor($ip){
-    $mysqli  = new mysqli("hopper.wlu.ca","blac2410","123root456!","blac2410");
+    $mysqli  = new mysqli("hopper.wlu.ca","blac2410","123root456!","blac2410") or die(print_r(error_get_last()));
 
-    /* check connection */
-    if ($mysqli->connect_errno) {
-        printf("Connect failed: %s\n", $mysqli->connect_error);
-        exit();
-    }
-    $mysqli->query("INSERT INTO index_visitors (ip, frequency) VALUES ('$ip','1') ON DUPLICATE KEY UPDATE frequency=frequency+1");
+    $mysqli->query("INSERT INTO index_visitors (ip, frequency) VALUES ('$ip','1') ON DUPLICATE KEY UPDATE frequency=frequency+1")
+    or die($mysqli->error);
+
     $mysqli->close();
 }
 
