@@ -8,7 +8,7 @@
  */
 
 
-const ACCESS_LOGIN_HTML = "../access_login.html";
+const ACCESS_LOGIN_HTML = "access_login.html";
 
 
 if(isset($_COOKIE['email'])&& isset($_COOKIE['password'])){
@@ -17,14 +17,12 @@ if(isset($_COOKIE['email'])&& isset($_COOKIE['password'])){
     $validated = validate_login($_REQUEST['email'],$_REQUEST['password']);
 }
 if($validated){
-    header("Location:"."../mydoc.html");
-    die();
+    include("mydoc.html");
+    print_r(error_get_last());
 }else{
     header("Location:".ACCESS_LOGIN_HTML);
     die();
 }
-
-
 
 
 function check_cookie(){
