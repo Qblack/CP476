@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/styles.css" rel="stylesheet">
+    <title>Mortgage Calculator</title>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 1%">
+        <div class="col-md-6 col-md-offset-3">
+            <form>
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="text"  class="form-control" name="amount" id="amount" required="true" autofocus="true">
+                </div>
+                <div class="form-group">
+                    <label for="interest">Annual Interest Rate:</label>
+                    <input type="text"  class="form-control" name="interest" id="interest" required="true">
+                </div>
+                <div class="form-group">
+                    <label for="years">Years:</label>
+                    <input type="text"  class="form-control" name="years" id="years" required="true">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-info" value="calculate" onclick="mortgage_ajax()">Calculate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <p id="answerArea" hidden>The mortgage payment will be: $
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    function getData(dataSource) {
+        var XMLHttpRequestObject = false;
+
+        if (window.XMLHttpRequest) {
+            XMLHttpRequestObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        if(XMLHttpRequestObject) {
+            XMLHttpRequestObject.open("GET", dataSource);
+
+            XMLHttpRequestObject.onreadystatechange = function()
+            {
+                if (XMLHttpRequestObject.readyState == 4 &&
+                        XMLHttpRequestObject.status == 200) {
+                        var targetDiv = document.getElementById("answerArea");
+                        targetDiv.hidden=false;
+                        var payment = parseFloat(XMLHttpRequestObject.responseText);
+                        targetDiv.innerHTML+= payment.toFixed(2);
+
+                }
+            }
+            XMLHttpRequestObject.send(null);
+        }
+    }
+
+    function mortgage_ajax(keyEvent)  {
+        var amountValue = document.getElementById("amount").value;
+        var interestValue = document.getElementById("interest").value;
+        var yearsValue = document.getElementById("years").value;
+
+        if (parseFloat(amountValue) && parseFloat(interestValue) && parseFloat(yearsValue)) {
+            getData("mortgage.php?amount=" + amountValue + "&interest=" + interestValue+"&years="+yearsValue);
+        } else {
+            var targetDiv = document.getElementById("answerArea");
+            targetDiv.innerHTML = "<div>Inputs should be numbers</div>";
+        }
+    }
+</script>
+</body>
+</html>
