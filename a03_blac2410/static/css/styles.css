@@ -34,6 +34,12 @@
     background-image: url("../img/space-wallpapers-7.jpg");
     background-size: 100%;
 }
+.banner h1{
+    color: #a7bbe0;
+}
+.banner p{
+    color: #98aacf;
+}
 
 .North{
     padding-bottom: 2%;
@@ -59,6 +65,6 @@ th{
     text-align: center;
 }
 
-p.center {
+.center {
     text-align: center;
 }
