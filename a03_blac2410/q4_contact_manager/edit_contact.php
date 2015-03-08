@@ -9,9 +9,9 @@
     <div class="row" style="margin-top: 1%">
         <div class="col-md-4 col-md-offset-4">
             <div id="alertArea" role="alert"></div>
-            <form class="form" id="createForm">
+            <form class="form" id="updateForm">
                 <div class="form-group">
-                    <input class="form-control" name="id" type="text" id="id" placeholder="Id" required>
+                    <input class="form-control" name="id" type="text" id="id" placeholder="Id" required disabled>
                 </div>
                 <div class="form-group">
                     <input class="form-control" name="firstName" type="text" id="firstName" placeholder="First Name" required>
@@ -29,8 +29,8 @@
                     <input class="form-control" name="password" type="password" id="password" placeholder="Password" required>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default" aria-label="Create">
-                        Create
+                    <button type="submit" class="btn btn-default" aria-label="Update">
+    Update
                     </button>
                 </div>
             </form>
@@ -46,16 +46,20 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="contact_calls.js"></script>
 <script>
-    $("#createForm").submit(function sendCreate(event){
-        var id = document.getElementById("id").value;
-        var firstName = document.getElementById("firstName").value;
-        var lastName = document.getElementById("lastName").value;
-        var phoneNumber = document.getElementById("phoneNumber").value;
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
-        
-        createContact(id,firstName, lastName, phoneNumber,email, password);
-        event.preventDefault()
+    $(document).ready(function(){
+        getContactById(<?php echo $_GET["id"];?>);
+    });
+
+$("#updateForm").submit(function updateForm(event){
+    var id = document.getElementById("id").value;
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    updateContact(id,firstName, lastName, phoneNumber,email, password);
+    event.preventDefault()
     });
 </script>
 

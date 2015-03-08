@@ -6,10 +6,9 @@
  * Time: 9:59 PM
  */
 require_once("Contact.php");
+error_reporting(E_ALL);
 
 class ContactManager {
-
-
 
     private $connection;
 
@@ -48,14 +47,15 @@ class ContactManager {
         $id = $this->connection->real_escape_string($id);
         $query = "SELECT * FROM contact WHERE id like '$id'";
         $contact = $this->connection->query($query)->fetch_row();
-
-        return $contact;
+        $result = new Contact($contact[0],$contact[1],$contact[2],$contact[3],$contact[4],$contact[5]);
+        return $result;
     }
 
     function createContact($id, $firstName, $lastName, $phone, $email,$password){
-//        $id = $this->connection->real_escape_string($id);
+        $id = $this->connection->real_escape_string($id);
+
         $existingContact = $this->getContactById($id);
-        if(is_null($existingContact[0])) {
+        if(is_null($existingContact->id)) {
             $firstName = $this->connection->real_escape_string($firstName);
             $lastName = $this->connection->real_escape_string($lastName);
             $phone = $this->connection->real_escape_string($phone);
@@ -72,14 +72,18 @@ class ContactManager {
     function updateContact($id, $firstName, $lastName, $phone, $email,$password){
         $id = $this->connection->real_escape_string($id);
         $existingContact = $this->getContactById($id);
-        if(isset($existingContact)) {
+        if(!is_null($existingContact->id)) {
             $firstName = $this->connection->real_escape_string($firstName);
             $lastName = $this->connection->real_escape_string($lastName);
             $phone = $this->connection->real_escape_string($phone);
             $email = $this->connection->real_escape_string($email);
-            $password = hash("sha256", $password);
-            $query = "UPDATE contact SET id='$id', firstname='$firstName', lastname='$lastName',phonenumber='$phone',email='$email',password='$password' WHERE id='$id'";
-            $this->connection->query($query);
+            if($password!="******"){
+                $password = hash("sha256", $password);
+                $query = "UPDATE contact SET id='$id', firstname='$firstName', lastname='$lastName',phonenumber='$phone',email='$email',password='$password' WHERE id='$id'";
+            }else{
+                $query = "UPDATE contact SET id='$id', firstname='$firstName', lastname='$lastName',phonenumber='$phone',email='$email' WHERE id='$id'";
+            }
+            $this->connection->query($query) or die(print_r("error"));
             return true;
         }else{
             return false;

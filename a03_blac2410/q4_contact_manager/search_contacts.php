@@ -9,8 +9,15 @@
 require_once("ContactManager.php");
 
 $manager = new ContactManager();
-$contact = $manager->getContactByName($_GET["firstName"],$_GET["lastName"]);
+
+
+if(isset($_GET["id"])){
+    $contact = $manager->getContactById($_GET["id"]);
+}else{
+    $contact = $manager->getContactByName($_GET["firstName"],$_GET["lastName"]);
+}
+
 header('content-type: application/json; charset=utf8;');
-$json = json_encode($contact);
-echo $json;
+$json_result = json_encode($contact);
+echo $json_result;
 
