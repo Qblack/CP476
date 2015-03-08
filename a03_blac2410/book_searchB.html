@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Quinton Black</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.1/darkly/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/styles.css" rel="stylesheet">
+    <?php
+    require_once("cgi-bin/bookshelfSearch.php");
+    ?>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class ="col-md-12">
+            <div class="jumbotron"><h1>Search My Friend's and I's Bookshelf</h1></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class ="col-md-12">
+            <form class="form form-inline pull-right">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input class="form-control" type="text" id="author" name="author">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-default" aria-label="Search" onclick="searchBooks()">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                    <button type="reset" class="btn btn-default" onclick="getBooks()">
+                        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table" id="bookTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Publisher</th>
+                        <th>Publish Date</th>
+                        <th>Description</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody id="bookTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="application/javascript">
+    var BOOKSHELF_URLS = ["mybookshelf.xml", "http://hopper.wlu.ca/~hage9560/CP476/a3/Q3/bookshelf.xml"];
+    $(document).ready(getBooks());
+
+    function getBooks(){
+        $("#bookTableBody").empty();
+        $(BOOKSHELF_URLS).each(function(){
+            $.ajax({
+                type: "GET",
+                url: this
+            })
+                    .success(function( xml ) {
+                        $(xml).find('book').each(function(){
+                            var title = $(this).find('title').text();
+                            var publisher = $(this).find('publisher').text();
+                            var publish_date = $(this).find('publishdate').text();
+                            var description = $(this).find('description').text();
+                            var location = $(this).find('location').text();
+
+                            $('<tr></tr>').html(
+                                    '<td>'+title+'</td>'+
+                                    '<td>'+publisher+'</td>'+
+                                    '<td>'+publish_date+'</td>'+
+                                    '<td>'+description+'</td>'+
+                                    '<td>'+location+'</td>'
+                            ).appendTo("#bookTableBody");
+                        })
+                    }
+            );
+        });
+    }
+
+    function searchBooks(){
+        var authorValue = document.getElementById("author").value;
+        var titleValue = document.getElementById("title").value;
+        $("#bookTableBody").empty();
+
+        $(BOOKSHELF_URLS).each(function() {
+            $.ajax({
+                type: "POST",
+                url: "book_search_service.php",
+                data: {author: authorValue, title: titleValue, file:this}
+            })
+                    .success(function (xml) {
+
+                        $(xml).find('book').each(function () {
+
+                            var title = $(this).find('title').text();
+                            var publisher = $(this).find('publisher').text();
+                            var publish_date = $(this).find('publishdate').text();
+                            var description = $(this).find('description').text();
+                            var location = $(this).find('location').text();
+
+                            $('<tr></tr>').html(
+                                    '<td>' + title + '</td>' +
+                                    '<td>' + publisher + '</td>' +
+                                    '<td>' + publish_date + '</td>' +
+                                    '<td>' + description + '</td>' +
+                                    '<td>' + location + '</td>'
+                            ).appendTo("#bookTableBody");
+                        })
+                    }
+            );
+        });
+    }
+</script>
+
+</body>
+</html>
