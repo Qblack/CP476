@@ -299,7 +299,7 @@ echo date("h:i A e");
         "Political tags - such as royalist, communist, democrat,populist, fascist, liberal, conservative, and so forth - are never basic criteria.",
         "The human race divides politically into those who want people to be controlled and those who have no such desire.  " +
         "The former are idealists acting from the highest motives of the greatest good for the greatest number.  The latter are surly curmudgeons, suspicious and lacking in altruism.  But they are more comfortable neighbours then the other sort.",
-        "Sin lies only in hurting other people unnecessarily.  All other's ins' are invented nonsense.  (Hurting yourself is not sinful -just stupid.)",
+        "Sin lies only in hurting other people unnecessarily.  All other's sins' are invented nonsense.  (Hurting yourself is not sinful -just stupid.)",
         "Certainly the game is rigged.  Don't let that stop you.  If you don't bet, you can't win.",
         "Delusions are often functional.  A mother's opinions about her children's beauty, intelligence, goodness, etcetera ad nauseam,keep her from drowning them at birth.",
         "Never appeal to a man's better nature.  He may not have one.Invoking his self-interest gives you more leverage.",

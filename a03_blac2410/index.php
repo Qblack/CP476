@@ -16,7 +16,7 @@
 <?php
     $detect = new Mobile_Detect();
     $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
-    if ($deviceType == "computer") {
+    if ($deviceType == "computer" and !isset($_GET["mobile"])) {
         include_once("computer_index.php");
     } else {
         include_once("badgerphone.php");
