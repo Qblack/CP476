@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.1/darkly/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/styles.css" rel="stylesheet">
+    <title>Contacts</title>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 1%">
+        <div class="col-md-10 col-md-offset-1">
+            <form class="form form-inline pull-right" id="searchForm">
+                <div class="form-group" >
+                    <input class="form-control" name="firstName" type="text" id="firstName" placeholder="First Name" required>
+                    <input class="form-control" name="lastName" type="text" id="lastName" placeholder="Last Name" required>
+                    <button type="submit" class="btn btn-default" aria-label="Search">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                    <button type="reset" class="btn btn-default" onclick="refresh_table()">
+                        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <table class="table" id="contacts">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="contact_calls.js"></script>
+
+<script>
+    $( "#searchForm" ).submit(function( event ) {
+        event.preventDefault();
+        search();
+    });
+
+</script>
+
+<script type="application/javascript">
+    var tableId = "#contacts";
+    $(document).ready(getContacts(tableId));
+    function search(){
+        $(tableId+" > tbody").empty();
+
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        getContactByName(tableId,firstName,lastName);
+    }
+    function refresh_table(){
+        $(tableId+" > tbody").empty();
+        getContacts(tableId);
+    }
+
+
+</script>
+
+</body>
+
+</html>
