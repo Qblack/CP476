@@ -26,6 +26,21 @@ function getContactByName(tableId, firstName, lastName) {
         });
 }
 
+function createContact(id, firstName, lastName, phoneNumber, email, password) {
+    $.ajax("create_contact.php",
+        {
+            type:'POST',
+            dataType: "json",
+            data: {"id":id,"firstName":firstName,"lastName":lastName,"phoneNumber":phoneNumber,"email":email,"password":password}
+        }
+    ).success(function(){
+        displayCreated();
+    }).fail(function(){
+            failed();
+    })
+}
+
+
 
 
 function contactAsRow(contact){
@@ -42,5 +57,17 @@ function contactAsRow(contact){
 
 function wrapAsCell(content){
     return "<td>"+content+"</td>";
+}
 
+function failed(){
+    $("#alertArea").addClass("alert alert-danger alert-dismissible");
+    $("#alertArea").html('<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+    '<span aria-hidden="true">&times;</span></button>' +
+    '<strong>Danger!</strong> User was not created');
+}
+
+function displayCreated(){
+    $("#alertArea").addClass("alert alert-success alert-dismissible");
+    $("#alertArea").html('<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+    '<span aria-hidden="true">&times;</span></button>' +'<strong>Awesome!</strong> User was created </div>');
 }

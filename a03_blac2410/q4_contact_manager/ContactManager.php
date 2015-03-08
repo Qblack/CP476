@@ -47,21 +47,22 @@ class ContactManager {
     function getContactById($id){
         $id = $this->connection->real_escape_string($id);
         $query = "SELECT * FROM contact WHERE id like '$id'";
-        $contact = $this->connection->query($query);
+        $contact = $this->connection->query($query)->fetch_row();
+
         return $contact;
     }
 
     function createContact($id, $firstName, $lastName, $phone, $email,$password){
-        $id = $this->connection->real_escape_string($id);
+//        $id = $this->connection->real_escape_string($id);
         $existingContact = $this->getContactById($id);
-        if(!isset($existingContact)) {
+        if(is_null($existingContact[0])) {
             $firstName = $this->connection->real_escape_string($firstName);
             $lastName = $this->connection->real_escape_string($lastName);
             $phone = $this->connection->real_escape_string($phone);
             $email = $this->connection->real_escape_string($email);
             $password = hash("sha256", $password);
             $query = "INSERT INTO contact (id, firstname, lastname,phonenumber,email,password) VALUES('$id', '$firstName', '$lastName', '$phone', '$email','$password')";
-            $this->connection->query($query);
+            $this->connection->query($query) or die(mysqli_error($this->connection));
             return true;
         }else{
             return false;
