@@ -1,0 +1,133 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   '-python',
+1 verbose cli   'C:\\Python27\\python.exe',
+1 verbose cli   'sleep' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json ServerTime@0.0.1 No repository field.
+6 warn package.json ServerTime@0.0.1 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'C:\\Python27\\python.exe', null ]
+9 verbose cache add name=undefined spec="C:\\Python27\\python.exe" args=["C:\\Python27\\python.exe",null]
+10 verbose parsed url { protocol: 'c:',
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: '',
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: '',
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: '/Python27/python.exe',
+10 verbose parsed url   path: '/Python27/python.exe',
+10 verbose parsed url   href: 'c:/Python27/python.exe' }
+11 verbose cache add [ 'sleep', null ]
+12 verbose cache add name=undefined spec="sleep" args=["sleep",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'sleep',
+13 verbose parsed url   path: 'sleep',
+13 verbose parsed url   href: 'sleep' }
+14 silly lockFile 13f5911b-C-Python27-python-exe C:\Python27\python.exe
+15 verbose lock C:\Python27\python.exe C:\Users\Q\AppData\Roaming\npm-cache\13f5911b-C-Python27-python-exe.lock
+16 silly lockFile c3ca5f78-sleep sleep
+17 verbose lock sleep C:\Users\Q\AppData\Roaming\npm-cache\c3ca5f78-sleep.lock
+18 silly lockFile c3ca5f78-sleep sleep
+19 silly lockFile c3ca5f78-sleep sleep
+20 verbose addNamed [ 'sleep', '' ]
+21 verbose addNamed [ null, '*' ]
+22 silly lockFile e2b4ed60-sleep sleep@
+23 verbose lock sleep@ C:\Users\Q\AppData\Roaming\npm-cache\e2b4ed60-sleep.lock
+24 silly addNameRange { name: 'sleep', range: '*', hasData: false }
+25 verbose request where is /sleep
+26 verbose request registry https://registry.npmjs.org/
+27 verbose request id 3f6b1b72f21f440b
+28 verbose url raw /sleep
+29 verbose url resolving [ 'https://registry.npmjs.org/', './sleep' ]
+30 verbose url resolved https://registry.npmjs.org/sleep
+31 verbose request where is https://registry.npmjs.org/sleep
+32 info trying registry request attempt 1 at 16:00:38
+33 verbose etag "BJUUZXE2ZJF3WW9XN9QLD1QP9"
+34 http GET https://registry.npmjs.org/sleep
+35 verbose chmod C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz 666
+36 verbose tar unpack C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz
+37 silly lockFile e71655e6--9767086778301746-tmp-tgz-unpack tar://C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz-unpack
+38 verbose lock tar://C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz-unpack C:\Users\Q\AppData\Roaming\npm-cache\e71655e6--9767086778301746-tmp-tgz-unpack.lock
+39 silly lockFile ab98a9a8-38752-0-9767086778301746-tmp-tgz tar://C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz
+40 verbose lock tar://C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz C:\Users\Q\AppData\Roaming\npm-cache\ab98a9a8-38752-0-9767086778301746-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '777', '666' ]
+42 error not a package C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz
+43 silly lockFile e71655e6--9767086778301746-tmp-tgz-unpack tar://C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz-unpack
+44 silly lockFile e71655e6--9767086778301746-tmp-tgz-unpack tar://C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz-unpack
+45 silly lockFile ab98a9a8-38752-0-9767086778301746-tmp-tgz tar://C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz
+46 silly lockFile ab98a9a8-38752-0-9767086778301746-tmp-tgz tar://C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz
+47 silly lockFile 13f5911b-C-Python27-python-exe C:\Python27\python.exe
+48 silly lockFile 13f5911b-C-Python27-python-exe C:\Python27\python.exe
+49 error addLocal Could not install C:\Python27\python.exe
+50 http 304 https://registry.npmjs.org/sleep
+51 silly registry.get cb [ 304,
+51 silly registry.get   { date: 'Sat, 21 Mar 2015 20:00:39 GMT',
+51 silly registry.get     server: 'Apache',
+51 silly registry.get     via: '1.1 varnish',
+51 silly registry.get     'last-modified': 'Sat, 21 Mar 2015 20:00:39 GMT',
+51 silly registry.get     'cache-control': 'max-age=60',
+51 silly registry.get     etag: '"BJUUZXE2ZJF3WW9XN9QLD1QP9"',
+51 silly registry.get     age: '8',
+51 silly registry.get     'x-served-by': 'cache-jfk1029-JFK',
+51 silly registry.get     'x-cache': 'HIT',
+51 silly registry.get     'x-cache-hits': '1',
+51 silly registry.get     'x-timer': 'S1426968039.945413,VS0,VE0',
+51 silly registry.get     vary: 'Accept',
+51 silly registry.get     'content-length': '0',
+51 silly registry.get     'keep-alive': 'timeout=10, max=50',
+51 silly registry.get     connection: 'Keep-Alive' } ]
+52 verbose etag https://registry.npmjs.org/sleep from cache
+53 silly addNameRange number 2 { name: 'sleep', range: '*', hasData: true }
+54 silly addNameRange versions [ 'sleep',
+54 silly addNameRange   [ '1.0.0',
+54 silly addNameRange     '1.0.1',
+54 silly addNameRange     '1.0.2',
+54 silly addNameRange     '1.1.0',
+54 silly addNameRange     '1.1.1',
+54 silly addNameRange     '1.1.2',
+54 silly addNameRange     '1.1.3',
+54 silly addNameRange     '1.1.4',
+54 silly addNameRange     '1.1.5',
+54 silly addNameRange     '1.1.6',
+54 silly addNameRange     '1.1.7',
+54 silly addNameRange     '1.1.8',
+54 silly addNameRange     '1.2.0',
+54 silly addNameRange     '2.0.0' ] ]
+55 verbose addNamed [ 'sleep', '2.0.0' ]
+56 verbose addNamed [ '2.0.0', '2.0.0' ]
+57 silly lockFile 24ae5886-sleep-2-0-0 sleep@2.0.0
+58 verbose lock sleep@2.0.0 C:\Users\Q\AppData\Roaming\npm-cache\24ae5886-sleep-2-0-0.lock
+59 silly lockFile 24ae5886-sleep-2-0-0 sleep@2.0.0
+60 silly lockFile 24ae5886-sleep-2-0-0 sleep@2.0.0
+61 silly lockFile e2b4ed60-sleep sleep@
+62 silly lockFile e2b4ed60-sleep sleep@
+63 error Error: ENOENT, open 'C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz-unpack\package.json'
+64 error If you need help, you may report this *entire* log,
+64 error including the npm and node versions, at:
+64 error     <http://github.com/npm/npm/issues>
+65 error System Windows_NT 6.2.9200
+66 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "-python" "C:\\Python27\\python.exe" "sleep"
+67 error cwd C:\Users\Q\PhpstormProjects\CP476\a04_blac2410\ServerTime
+68 error node -v v0.10.36
+69 error npm -v 1.4.28
+70 error path C:\Users\Q\AppData\Local\Temp\npm-37808-vkRLv71X\1426968038752-0.9767086778301746\tmp.tgz-unpack\package.json
+71 error code ENOENT
+72 error errno 34
+73 verbose exit [ 34, true ]

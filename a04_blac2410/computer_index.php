@@ -19,10 +19,10 @@
                                     <li class="active"><a href="#">Home</a></li>
                                     <li><a href="mydoc.html">Resume</a></li>
                                     <li><a href="portal.html">Portal</a></li>
-                                    <li><a href="#">Read Me</a></li>
+                                    <li><a href="readme.txt">Read Me</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav pull-right">
-                                    <li class="pull-right" ><a href="#">Log In</a></li>
+                                    <li class="pull-right" ><a href="login.php">Log In</a></li>
                                 </ul>
                             </div><!--/.nav-collapse -->
                         </div><!--/.container-fluid -->
