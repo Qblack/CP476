@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Quinton Black</title>
-    <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.1/darkly/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/darkly.css" rel="stylesheet">
     <link href="static/css/styles.css" rel="stylesheet">
     <?php
         require_once('Mobile_Detect.php');

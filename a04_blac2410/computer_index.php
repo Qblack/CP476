@@ -22,7 +22,7 @@
                                     <li><a href="readme.txt">Read Me</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav pull-right">
-                                    <li class="pull-right" ><a href="login.php">Log In</a></li>
+                                    <li class="pull-right" ><a href="https://hopper.wlu.ca/~blac2410/a04_blac2410/login.html">Log In</a></li>
                                 </ul>
                             </div><!--/.nav-collapse -->
                         </div><!--/.container-fluid -->
