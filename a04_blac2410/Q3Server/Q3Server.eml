@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" jdk="1.6" jdk_type="JavaSDK">
+	<output-test url="file://$MODULE_DIR$/out/test/Q3Server"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="C:\Users\Q\PhpstormProjects\CP476\a04_blac2410\Q3Server\lib\mysql-connector-java-5.1.13-bin.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.13-bin.jar!/"/>
+	</lib>
+</component>

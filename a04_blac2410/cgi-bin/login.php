@@ -37,9 +37,6 @@ if(!$validated){
     $id = $user[3];
 }
 
-
-
-
 function check_cookie(){
     $email = $_COOKIE["email"];
     $hash = $_COOKIE["password"];
